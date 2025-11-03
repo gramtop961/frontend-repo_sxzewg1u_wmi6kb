@@ -69,8 +69,8 @@ const HeroSlider = () => {
               <a href="#causes" className="px-6 py-3 rounded-full font-semibold shadow-lg text-white focus:outline-none focus:ring-2 focus:ring-white/60" style={{ background: 'linear-gradient(90deg, #f97a17, #ffccee)' }}>
                 Explore Our Work
               </a>
-              <a href="#projects" className="px-6 py-3 rounded-full font-semibold backdrop-blur bg-white/60 text-gray-900 border border-white/60 shadow">
-                See Projects
+              <a href="/our-work" className="px-6 py-3 rounded-full font-semibold backdrop-blur bg-white/60 text-gray-900 border border-white/60 shadow">
+                Learn more
               </a>
             </div>
           </div>

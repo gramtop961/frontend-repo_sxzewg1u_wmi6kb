@@ -4,6 +4,7 @@ import HeroSlider from './components/HeroSlider';
 import CausesGrid from './components/CausesGrid';
 import ImpactSection from './components/ImpactSection';
 import OurWork from './components/OurWork';
+import CauseDetail from './components/CauseDetail';
 import { Heart } from 'lucide-react';
 
 function App() {
@@ -41,13 +42,20 @@ function App() {
     };
   }, []);
 
-  const isOurWork = useMemo(() => path === '/our-work', [path]);
+  const route = useMemo(() => {
+    if (path === '/our-work') return { name: 'our-work' };
+    if (path.startsWith('/cause/')) {
+      const slug = path.replace('/cause/', '').replace(/\/$/, '');
+      return { name: 'cause', params: { slug } };
+    }
+    return { name: 'home' };
+  }, [path]);
 
   return (
     <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, #fff6fc, #fff3e9)' }}>
       <Navbar onDonateClick={openDonate} />
 
-      {!isOurWork && (
+      {route.name === 'home' && (
         <main>
           <HeroSlider />
           <CausesGrid />
@@ -81,9 +89,15 @@ function App() {
         </main>
       )}
 
-      {isOurWork && (
+      {route.name === 'our-work' && (
         <main>
           <OurWork />
+        </main>
+      )}
+
+      {route.name === 'cause' && (
+        <main>
+          <CauseDetail slug={route.params.slug} />
         </main>
       )}
 

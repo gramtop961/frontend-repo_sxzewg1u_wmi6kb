@@ -42,7 +42,7 @@ const HeroSlider = () => {
       <div className="relative h-[80vh] w-full overflow-hidden rounded-b-[2rem]">
         {/* Spline cover */}
         <div className="absolute inset-0">
-          <Spline scene="https://prod.spline.design/ESO6PnMadasO0hU3/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+          <Spline scene="https://prod.spline.design/cEecEwR6Ehj4iT8T/scene.splinecode" style={{ width: '100%', height: '100%' }} />
         </div>
         {/* Gradient overlays should not block interactions */}
         <div className="absolute inset-0 pointer-events-none" style={{
